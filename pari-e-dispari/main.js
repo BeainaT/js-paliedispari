@@ -11,11 +11,22 @@ while (choice) {
         choice = false;
     }
 }
-let userNumber;
+let userNumber = Number(prompt("Inserisci un numero da 1 a 5"));
 //Verifico che l'utente inserisca effettivamente un numero
-do {
-    userNumber = Number(prompt("Inserisci un numero da 1 a 5"));
-} while (isNaN(userNumber));
+let range = true;
+//finchè l'utente inserisce una parola o un numero fuori dal range eseguo ciclo
+while (isNaN(userNumber) || range) {
+    userNumber =  Number(prompt("per favore, inserisci un numero compreso tra 1 e 5"));
+    do {
+        // Se il numero inserito è < 1 o > 5 chiedo di inserire il valore nel range richiesto
+        if (userNumber < 1 || userNumber > 5) {
+            userNumber = Number(prompt("Il numero deve essere compreso tra 1 e 5"));
+        } else {
+            //altrimenti il numero è nel range richiesto, quindi esco dal ciclo
+            range = false;
+        }
+    } while (range); //questa validazione riguarda solo il range
+}
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 function getNumber (num) {
     randomNumber = Math.floor(Math.random() * 5) + 1;
