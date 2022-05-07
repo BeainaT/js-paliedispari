@@ -1,5 +1,10 @@
 // Chiedere all’utente di inserire una parola. Creare una funzione per capire se la parola inserita è palindroma
-let aWord = prompt("Inserisci una parola");
+//Salvo una variabile
+let aWord;
+//Verifico che l'utente inserisca una parola, altrimenti continuo a chiederla
+do {
+    aWord = prompt("Inserisci una parola");
+} while (!isNaN(aWord));
 //funzione che restituisce una parola al contrario
 function reversedWord(word) {
     let reverseWord = "";
