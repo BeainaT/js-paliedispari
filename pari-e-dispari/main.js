@@ -1,5 +1,16 @@
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 let userChoice = prompt("Scegli se giocare con pari o dispari");
+// dichiaro variabile booleana per verificare input utente
+let choice = true;
+while (choice) {
+    // finchè input utente è !== da pari e dispari chiedo di ripetere l'operazione
+    if (userChoice !== "pari" && userChoice !== "dispari") {
+        userChoice = prompt("Scegli con cosa vuoi giocare. Puoi scrivere solo pari o dispari!");
+    } else {
+        //altrimenti la mia condizione diventa falsa, quindi esco dal ciclo.
+        choice = false;
+    }
+}
 let userNumber;
 //Verifico che l'utente inserisca effettivamente un numero
 do {
