@@ -43,12 +43,12 @@ function result (num) {
 }
 // Dichiariamo chi ha vinto.
 if (result(sum) === userChoice) {
-    document.querySelector(".result").innerHTML = `Complimenti, hai vinto!!`
+    document.querySelector(".result").innerHTML = `Complimenti, hai vinto!!<br>(la somma è ${sum}!)`;
 
 } else {
-    document.querySelector(".result").innerHTML = `Mi dispiace, hai perso!`
+    document.querySelector(".result").innerHTML = `Mi dispiace, hai perso!<br>(la somma è ${sum}!)`;
 }
 //Stampo su DOM
-document.querySelector(".choice").innerHTML += `${userChoice}`;
-document.querySelector(".user").innerHTML = `${userNumber}`;
-document.querySelector(".cpu").innerHTML = `${pcNumber}`;
+document.querySelector(".choice").innerHTML = `la tua scelta è:<br>${userChoice}`;
+document.querySelector(".user").innerHTML = `il tuo numero:<br>${userNumber}`;
+document.querySelector(".cpu").innerHTML = `il numero del pc:<br>${pcNumber}`
