@@ -49,6 +49,7 @@ if (result(sum) === userChoice) {
     document.querySelector(".result").innerHTML = `Mi dispiace, hai perso!<br>(la somma è ${sum}!)`;
 }
 //Stampo su DOM
+document.querySelector(".container").classList.add("custom");
 document.querySelector(".choice").innerHTML = `la tua scelta è:<br>${userChoice}`;
 document.querySelector(".user").innerHTML = `il tuo numero:<br>${userNumber}`;
 document.querySelector(".cpu").innerHTML = `il numero del pc:<br>${pcNumber}`
