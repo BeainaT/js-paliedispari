@@ -46,9 +46,9 @@ if (result(sum) === userChoice) {
     document.querySelector(".result").innerHTML = `Complimenti, hai vinto!!`
 
 } else {
-    document.querySelector(".result").innerHTML += `Mi dispiace, hai perso!`
+    document.querySelector(".result").innerHTML = `Mi dispiace, hai perso!`
 }
 //Stampo su DOM
 document.querySelector(".choice").innerHTML += `${userChoice}`;
-document.querySelector(".user").innerHTML += `${userNumber}`;
-document.querySelector(".cpu").innerHTML += `${pcNumber}`;
+document.querySelector(".user").innerHTML = `${userNumber}`;
+document.querySelector(".cpu").innerHTML = `${pcNumber}`;
