@@ -11,7 +11,7 @@ while (choice) {
         choice = false;
     }
 }
-let userNumber = Number(prompt("Inserisci un numero da 1 a 5"));
+let userNumber;
 //Verifico che l'utente inserisca effettivamente un numero
 let range = true;
 //finchè l'utente inserisce una parola o un numero fuori dal range eseguo ciclo
@@ -28,15 +28,12 @@ while (isNaN(userNumber) || range) {
     } while (range); //questa validazione riguarda solo il range
 }
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-function getNumber (num) {
-    randomNumber = Math.floor(Math.random() * 5) + 1;
-    return randomNumber;
+function getNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
-let pcNumber = getNumber();
-console.log(pcNumber);
+let pcNumber = getNumber(1, 5);
 // Sommiamo i due numeri
 let sum = pcNumber + userNumber;
-console.log(sum);
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 function result (num) {
     if (sum % 2 === 1) {
@@ -46,7 +43,12 @@ function result (num) {
 }
 // Dichiariamo chi ha vinto.
 if (result(sum) === userChoice) {
-    console.log("user vince");
+    document.querySelector(".result").innerHTML = `Complimenti, hai vinto!!`
+
 } else {
-    console.log("user perde");
+    document.querySelector(".result").innerHTML += `Mi dispiace, hai perso!`
 }
+//Stampo su DOM
+document.querySelector(".choice").innerHTML += `${userChoice}`;
+document.querySelector(".user").innerHTML += `${userNumber}`;
+document.querySelector(".cpu").innerHTML += `${pcNumber}`;
