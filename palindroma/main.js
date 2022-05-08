@@ -17,9 +17,9 @@ function reversedWord(word) {
 let reverseWord = reversedWord(aWord);
 //SE la parola inserita è uguale alla parola inserita e invertita, la parola è palindroma.
 if (reverseWord === aWord) {
-    alert("la parola inserita è palindroma");
+    document.querySelector(".string").innerHTML = `La parola inserita è palindroma.`;
 } else {
-    alert("la parola inserita non è palindroma");
+    document.querySelector(".string").innerHTML =`La parola inserita non è palindroma.`;
 }    
 
     
